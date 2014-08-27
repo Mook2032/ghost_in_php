@@ -36,3 +36,29 @@ $env = $app->detectEnvironment(array(
 
 ));
 ```
+
+### Setup Environment
+1. Install `apache`
+2. Config virtual host
+- domain: ghost.dev
+- `DocumentRoot` points to: `your/path/to/project/folder/PUBLIC`
+e.g.
+```
+<VirtualHost *:80>
+        DocumentRoot "path/to/laravel/project/public"
+        ServerName cg.dev
+        <Directory "path/to/laravel/project/public">
+                Options Indexes FollowSymLinks
+                AllowOverride All
+                Order allow,deny
+                Allow from all
+        </Directory>
+</VirtualHost>
+```
+
+3. Set access permission on folder `app/storage` for `apache`
+Run following commands
+```
+cd path/to/your/laravel/project/
+sudo chown -R www-data app/storage
+```
