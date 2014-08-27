@@ -62,3 +62,6 @@ Run following commands
 cd path/to/your/laravel/project/
 sudo chown -R www-data app/storage
 ```
+
+4. browse to `ghost.dev` to check if we have installed successfully
+[Imgur](http://i.imgur.com/A74thKv.png)
