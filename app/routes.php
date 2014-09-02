@@ -15,3 +15,7 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::get('/twitter', 'AuthenController@getLoginwithTwitter');
+Route::get('/callback', 'AuthenController@TwitterCallback');
+Route::get('/logged', 'AuthenController@showUserCredentials');
